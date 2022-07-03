@@ -1,8 +1,8 @@
-package net.fabricmc.example
+package me.limelier.sterilize
 
 import net.fabricmc.api.ModInitializer
 
-class ExampleMod : ModInitializer {
+class Sterilize : ModInitializer {
 
     override fun onInitialize() {
         //TODO - "Not yet implemented"
