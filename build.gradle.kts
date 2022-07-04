@@ -9,6 +9,10 @@ group = property("maven_group")!!
 version = property("mod_version")!!
 
 repositories {
+    maven {
+        name = "Ladysnake Mods"
+        url = uri("https://ladysnake.jfrog.io/artifactory/mods")
+    }
 }
 
 dependencies {
@@ -18,6 +22,12 @@ dependencies {
 
     modImplementation("net.fabricmc:fabric-language-kotlin:${property("fabric_kotlin_version")}")
     modImplementation("net.fabricmc.fabric-api:fabric-api:${property("fabric_api_version")}")
+
+    modImplementation("dev.onyxstudios.cardinal-components-api:cardinal-components-base:${property("cardinal_components_version")}")
+    modImplementation("dev.onyxstudios.cardinal-components-api:cardinal-components-chunk:${property("cardinal_components_version")}")
+    // Includes Cardinal Components API as a Jar-in-Jar dependency
+    include("dev.onyxstudios.cardinal-components-api:cardinal-components-base:${property("cardinal_components_version")}")
+    include("dev.onyxstudios.cardinal-components-api:cardinal-components-chunk:${property("cardinal_components_version")}")
 }
 
 tasks {

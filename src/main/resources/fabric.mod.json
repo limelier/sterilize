@@ -18,16 +18,21 @@
 
   "environment": "*",
   "entrypoints": {
-    "main": [
+    "cardinal-components": [
       {
         "adapter": "kotlin",
-        "value": "me.limelier.sterilize.Sterilize"
+        "value": "me.limelier.sterilize.ChunkFertileBlocksComponentInitializer"
       }
     ]
   },
   "mixins": [
     "sterilize.mixins.json"
   ],
+  "custom": {
+    "cardinal-components": [
+      "sterilize:chunk-fertile-blocks-component"
+    ]
+  },
 
   "depends": {
     "fabricloader": ">=0.14.8",
@@ -35,8 +40,5 @@
     "minecraft": "1.18.x",
     "java": ">=17",
     "fabric-language-kotlin": ">=1.8.1+kotlin.1.7.0"
-  },
-  "suggests": {
-    "another-mod": "*"
   }
 }
